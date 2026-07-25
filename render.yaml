@@ -1,5 +1,4 @@
 services:
-  # Internal AI inference service. It is reachable only by the Spring Boot gateway.
   - type: pserv
     name: paper-ai-fastapi
     runtime: python
@@ -10,8 +9,6 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.12.0
-
-  # Public API consumed by the Vercel frontend.
   - type: web
     name: paper-backend-springboot
     runtime: docker
